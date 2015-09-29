@@ -14,9 +14,43 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"]
 }
 
+global your_drink
+your_drink = {}
+
+def check_YN(n):
+    """Function to Verify user input is Y or N""" 
+    while True:
+        try:
+            int(n)
+            n = (raw_input("Please enter [y/n]"))
+        except ValueError:
+            break
+
+    while True:
+        if n.upper() == "Y" or n.upper() == "N":
+            break
+        else:
+            n = (raw_input("Please enter [y/n]"))
+        
+
+
 def what_do_you_like():
-	for key in questions:
-		(raw_input(questions[key]))
+    """Function to ask user about drink preferences"""
+    for key in questions:
+        n = (raw_input(questions[key]))
+        n = n.upper()
+        check_YN(n)
+            
+        if n == "Y":
+            your_drink[key] = ingredients[key]
+        else:
+            continue
+
+
+        print your_drink
+
+
 
 
 what_do_you_like()
+
