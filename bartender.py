@@ -1,3 +1,5 @@
+import random
+
 questions = {
     "strong": "Do ye like yer drinks strong?",
     "salty": "Do ye like it with a salty tang?",
@@ -42,15 +44,31 @@ def what_do_you_like():
         check_YN(n)
             
         if n == "Y":
-            your_drink[key] = ingredients[key]
+            your_drink[key] = True
+        else:
+            your_drink[key] = False
+
+
+
+def drink_maker():
+    """Function to construct drink from questions asked"""
+    mixed_drink = []
+
+    for key in your_drink:
+        if your_drink[key] == True:
+            mixed_drink.append(random.choice(ingredients[key]))
         else:
             continue
 
+    drink = '\n'.join(mixed_drink) 
+    
+    print"Here is what you should put in your drink"
+    print drink
 
-        print your_drink
 
 
 
 
 what_do_you_like()
+drink_maker()
 
