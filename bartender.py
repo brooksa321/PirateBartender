@@ -79,8 +79,7 @@ def drink_maker():
 
 
 
-
-what_do_you_like()
-
-drink_maker()
+if __name__ == '__main__':
+    what_do_you_like()
+    drink_maker()
 
