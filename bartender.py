@@ -33,7 +33,7 @@ def check_YN(n):
             break
     ### Ensures the input is valid and capitalizes for uniformity
     while True:
-        if n.upper() == "Y" or "YES" or "N" or "No":
+        if n.upper() == "Y" or "YES" or "N" or "NO":
             break
         else:
             n = (raw_input("Please enter [y/n]"))
